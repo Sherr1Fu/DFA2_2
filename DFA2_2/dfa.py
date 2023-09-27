@@ -104,6 +104,11 @@ def readDFA(fname):
 # or false (if not)
 def doDFA(dfa, s):
     # Replace this with your code
+    state=0
+    for c in list(s):
+        state=dfa.transitions[state][ord(c)]
+    if dfa.accepting[state]==False:
+        return False
     return True
 
 # quick example of how to use it
